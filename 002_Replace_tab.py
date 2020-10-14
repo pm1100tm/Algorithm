@@ -65,16 +65,17 @@ def check_work():
 """ 백업 할 필요가 있는 경우 cp 는 osx 명령어 """
 def file_backup():
   pathlist = get_file_path()
-  os.system ("cp %s %s" % (path, path+".bak")) #백업파일 생성
+  for path in pathlist:
+    os.system ("cp %s %s" % (path, path+".bak")) #백업파일 생성
 
 
-""" with 안쓰고 """
 def test():
+  """ with 안쓰고 """
   path = os.getcwd() + "/quiz/codingDojang/Python-Algorithm/002_source_code_file/code1.py"
   f = open(path, "r")
   lines = f.read()
 
-  for "\t" in lines:
+  if "\t" in lines:
     pass
 
   new_lines = lines.replace("\t", " "*4)
