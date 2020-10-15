@@ -26,8 +26,6 @@ The radius of the round table is: 2.828
 # r = s / p
 """
 import math, os
-
-
 def get_radius(point_list):
     if max(point_list[0], point_list[1], point_list[2]) > point_list[0] + point_list[1] + point_list[2]:
         raise Exception()
