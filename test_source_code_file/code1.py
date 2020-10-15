@@ -1,6 +1,6 @@
 def get_file_path():
     pathlist = []
-    path = os.getcwd() + "/quiz/codingDojang/Python-Algorithm/002_source_code_file"
+    path = os.getcwd() + "/quiz/codingDojang/Python-Algorithm/test_source_code_file"
     for root, dirs, files in os.walk(path):
         for file in files:
             if file.endswith(".py"):
