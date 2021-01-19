@@ -10,7 +10,12 @@ class CommonUtils:
             result     = original_fn(*args, **kwargs)
             end_time   = time.time()
             
-            print('Working Time[{}]: {} sec'. format(original_fn.__name__, end_time-start_time))
+            print('Working Time[{}]: {} sec'. format(
+                    original_fn.__name__,
+                    end_time - start_time
+                )
+            )
+            
             return result
         
         return wrapper_fn

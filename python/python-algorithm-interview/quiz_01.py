@@ -28,7 +28,8 @@ class PalindromeCheck:
                 return False
         
         return True
-    
+
+    @CommonUtils.logging_time
     def isPalindrome_by_deque(self, s: str) -> bool:
         if not s:
             return False
@@ -44,7 +45,8 @@ class PalindromeCheck:
                 return False
         
         return True
-    
+
+    @CommonUtils.logging_time
     def isPalindrome_by_slicing(self, s: str) -> bool:
         if not s:
             return False
@@ -61,5 +63,3 @@ if __name__ == '__main__':
     r1 = check.isPalindrome("test")
     r2 = check.isPalindrome_by_deque("as issi sa")
     r3 = check.isPalindrome_by_slicing("as issi sa")
-    
-    print(r1, r2, r3)
