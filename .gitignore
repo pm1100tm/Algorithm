@@ -4,7 +4,10 @@
 ### user defined ###
 *.txt
 *.csv
+*.log
 *test.py
+
+.idea/
 
 
 ### macOS ###
