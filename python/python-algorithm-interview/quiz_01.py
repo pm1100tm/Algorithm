@@ -1,15 +1,14 @@
-import collections
-import re
-from typing import Deque
-
-from python.utils import CommonUtils
-
-
 """
 01. 유효한 팰린드롬
 주어진 문자열 팰린드롬인지 화인하기.
 단, 대소문자를 구분하지 않으며, 영문자와 숫자만을 대상으로 한다.
 """
+import collections
+import re
+from typing       import Deque
+from python.utils import CommonUtils
+
+
 class PalindromeCheck:
     
     @CommonUtils.logging_time
