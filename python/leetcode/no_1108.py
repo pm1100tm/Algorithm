@@ -3,6 +3,9 @@
 Given a valid (IPv4) IP address, return a defanged version of that IP address.
 A defanged IP address replaces every period "." with "[.]".
 
+- 주어진 올바른 IP4 주소가 있다면, 제거된 버전의 IP 주소를 리턴하라.
+- 제거된 버전의 IP 주소는 모든 . 를 [.] 로 교체한다.
+
 Example 1:
     Input: address = "1.1.1.1"
     Output: "1[.]1[.]1[.]1"
@@ -15,6 +18,7 @@ Constraints:
     The given address is a valid IPv4 address.
 """
 from python.utils import CommonUtils
+import unittest
 
 
 class Solution:
@@ -37,12 +41,20 @@ class Solution:
         return ''.join('[.]' if c == '.' else c for c in address)
 
 
-if __name__ == '__main__':
-    solution = Solution()
-    address_ex1 = "1.1.1.1"
-    address_ex2 = "255.100.50.0"
+class TestSolution(unittest.TestCase):
     
-    r1 = solution.defangeIPAddress_by_replace(address_ex1)
-    r2 = solution.defangeIPAddress_by_join(address_ex1)
-    r3 = solution.defangeIPAddress_by_re(address_ex1)
-    r4 = solution.defangeIPAddress_by_for(address_ex1)
+    def test_one_defangeIPAddress_by_replace(self):
+        s = Solution()
+        case_one = '1.1.1.1'
+        result = s.defangeIPAddress_by_replace(case_one)
+        self.assertEqual('1[.]1[.]1[.]1', result)
+    
+    def test_two_defangeIPAddress_by_replace_test_one(self):
+        s = Solution()
+        case_one = '255.100.50.0'
+        result = s.defangeIPAddress_by_replace(case_one)
+        self.assertEqual('255[.]100[.]50[.]0', result)
+        
+
+if __name__ == '__main__':
+    unittest.main()
