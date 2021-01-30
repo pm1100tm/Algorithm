@@ -14,16 +14,19 @@ x: 1230
 return: 321
 """
 import unittest
+from python.utils import CommonUtils
 
 
 class Solution:
     
+    @CommonUtils.logging_time
     def reverse(self, num: int) -> int:
+        
         if num < 0:
             return int(str(num * -1)[::-1]) * -1
         
         return int(str(num)[::-1])
-    
+
 
 class TestSolution(unittest.TestCase):
     
