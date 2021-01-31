@@ -59,38 +59,22 @@ class TestSolution(unittest.TestCase):
         self.case_002 = 'a123'
         self.case_003 = '123456'
         self.case_004 = '12b3a4'
-    
-    def test_my_solution_case_001(self):
-        case_001_result = self.solution.my_solution(self.case_001)
-        
-        self.assertEqual(
-            True,
-            case_001_result
-        )
-    
-    def test_my_solution_case_002(self):
-        case_002_result = self.solution.my_solution(self.case_002)
-        
-        self.assertEqual(
-            False,
-            case_002_result
-        )
-    
-    def test_my_solution_case_003(self):
-        case_003_result = self.solution.my_solution(self.case_003)
-        
-        self.assertEqual(
-            True,
-            case_003_result
-        )
 
-    def test_my_solution_case_004(self):
-        case_004_result = self.solution.my_solution(self.case_004)
+        self.expect_list = [True, False, True, False]
         
-        self.assertEqual(
-            False,
-            case_004_result
-        )
+    def test_my_solution(self):
+        case_result_list = [
+            self.solution.my_solution(self.case_001),
+            self.solution.my_solution(self.case_002),
+            self.solution.my_solution(self.case_003),
+            self.solution.my_solution(self.case_004)
+        ]
+        
+        for index, result in enumerate(case_result_list):
+            self.assertEqual(
+                self.expect_list[index],
+                result
+            )
     
     def test_solution_one(self):
         case_result_list = [
@@ -100,11 +84,23 @@ class TestSolution(unittest.TestCase):
             self.solution.solution_one(self.case_004)
         ]
         
-        expect_list = [True, False, True, False]
+        for index, result in enumerate(case_result_list):
+            self.assertEqual(
+                self.expect_list[index],
+                result
+            )
+
+    def test_solution_two(self):
+        case_result_list = [
+            self.solution.solution_two(self.case_001),
+            self.solution.solution_two(self.case_002),
+            self.solution.solution_two(self.case_003),
+            self.solution.solution_two(self.case_004)
+        ]
         
         for index, result in enumerate(case_result_list):
             self.assertEqual(
-                expect_list[index],
+                self.expect_list[index],
                 result
             )
 
