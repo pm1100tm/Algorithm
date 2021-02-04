@@ -4,6 +4,7 @@
 ### user define ###
 .txt
 .idea/
+test.py
 
 ### Eclipse ###
 .metadata
