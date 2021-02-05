@@ -35,7 +35,8 @@ class TestSolution(unittest.TestCase):
         
         self.case_one_result = "gfedcbZ"
         self.case_two_result = "ddccbbaaA"
-    
+
+    @CommonUtils.logging_time
     def test_my_solution(self):
         result_one = self.solution.my_solution(self.case_one)
         
@@ -51,6 +52,6 @@ class TestSolution(unittest.TestCase):
             result_two
         )
 
-
+        
 if __name__ == "__main__":
     unittest.main()
