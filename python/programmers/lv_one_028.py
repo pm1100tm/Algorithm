@@ -18,27 +18,36 @@ class Solution:
     """
     
     def my_solution(self, string: str) -> str:
-        answer = []
-        
-        string     = ' '.join(string.split())
+        answer = [''] * (string.count(' ') + 1)
         chunk_list = list(map(str, string.split(' ')))
         
         for i, chunk in enumerate(chunk_list):
             
-            temp_word = ''
-            
             for j, char in enumerate(chunk):
                 
                 if j % 2 == 0:
-                    temp_word += char.upper()
+                    answer[i] += char.upper()
                     continue
-                    
-                temp_word += char.lower()
-            
-            answer.append(temp_word)
+                
+                answer[i] += char.lower()
         
         return ' '.join(answer)
-
+    
+    def other_solution_one(self, string: str) -> str:
+        res = []
+        
+        for x in string.split(' '):
+            
+            word = ''
+            
+            for i in range(len(x)):
+                c = x[i].upper() if i % 2 == 0 else x[i].lower()
+                word = word + c
+                
+            res.append(word)
+            
+        return ' '.join(res)
+    
 
 class TestClass(unittest.TestCase):
     
@@ -47,9 +56,6 @@ class TestClass(unittest.TestCase):
         
         self.case_one        = 'try hello world'
         self.case_one_result = 'TrY HeLlO WoRlD'
-        
-        self.case_two        = 'try  hello  world'
-        self.case_two_result = 'TrY HeLlO WoRlD'
     
     @CommonUtils.logging_time
     def test_my_solution_one(self):
@@ -58,17 +64,6 @@ class TestClass(unittest.TestCase):
         
         self.assertEqual(
             self.case_one_result,
-            result
-        )
-    
-    @CommonUtils.logging_time
-    def test_my_solution_two(self):
-        result = self.solution.my_solution(self.case_two)
-        
-        print(result)
-        
-        self.assertEqual(
-            self.case_two_result,
             result
         )
 
