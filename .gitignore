@@ -6,6 +6,8 @@
 .idea/
 python/test/test.py
 test/
+.DS_Store
+.vscode/
 
 ### Eclipse ###
 .metadata
