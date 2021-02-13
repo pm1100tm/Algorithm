@@ -24,7 +24,6 @@ class Solution:
         """ 유클리드 호제법
         참조 링크 : https://m.blog.naver.com/PostView.nhn?blogId=writer0713&logNo=221133124302&proxyReferer=https:%2F%2Fwww.google.com%2F
         """
-        
         temp_n = n
         temp_m = m
         gcd = 0
@@ -37,3 +36,15 @@ class Solution:
         smn = int((temp_n * temp_m) / gcd)
         
         return [gcd, smn]
+    
+    def other_solution(self, n: int, m: int) -> int:
+        c, d = max(n, m), min(n, m)
+        t = 1
+        
+        while t > 0:
+            t = c % d
+            c, d = d, t
+        
+        answer = [c, int(n * m / c)]
+        
+        return answer
