@@ -8,6 +8,8 @@ python/test/test.py
 test/
 .DS_Store
 .vscode/
+coupang_*.py
+
 
 ### Eclipse ###
 .metadata
