@@ -27,23 +27,26 @@ def _add(a: int, b: int, a_list: list):
       구별해서 써야한다.
 
     """
-    logger.info("***start _add function")
+    logger.info("*** start _add function")
     assert isinstance(a, int) and isinstance(b, int), f"Type error, {a} or {b} it not int"
     assert isinstance(a_list, list), f"Type error, {c} it not list"
 
     logger.info(f"id - a: {id(a)}")
     logger.info(f"id - x: {id(x)}")
-    logger.info(f"a: {a}")
-    logger.info(f"x: {x}")
+    logger.info(f"id - a_list: {id(a_list)}")
+    logger.info(f"id - x_list: {id(x_list)}")
 
+    logger.info(f"{a=}")
+    logger.info(f"{x=}")
     a = 2
-
-    logger.info(f"a: {a}")
-    logger.info(f"x: {x}")
+    logger.info(f"here set a to 2: {a=}, {x=}")
+    logger.info(f"id - a: {id(a)}")
+    logger.info(f"id - x: {id(x)}")
 
     a_list.append(3)
-    logger.info(f"c_list: {a_list}")
-    logger.info(f"x_list: {x_list}")
+    logger.info(f"here add 3 to a_list {a_list=}, {x_list=}")
+    logger.info(f"id - a_list: {id(a_list)}")
+    logger.info(f"id - x_list: {id(x_list)}")
 
 
 if __name__ == '__main__':
