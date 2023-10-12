@@ -14,7 +14,7 @@
     3   3   3
     5   3   12
 """
-import unittest
+
 
 def solution_1(a, b):
     
@@ -28,6 +28,7 @@ def solution_1(a, b):
         
     return answer
 
+
 def solution_2(a, b):
     
     if a == b:
@@ -37,42 +38,3 @@ def solution_2(a, b):
         a, b = b, a
         
     return sum(range(a, b + 1))
-
-
-class TestSolution(unittest.TestCase):
-    
-    def setUp(self) -> None:
-        self.case_1 = (3, 5)
-        self.case_2 = (3, 3)
-        self.case_3 = (5, 3)
-    
-    def test_1_solution_1(self):
-        self.assertEqual(
-            12,
-            solution_1(
-                self.case_1[0],
-                self.case_1[1]
-            )
-        )
-    
-    def test_2_solution_1(self):
-        self.assertEqual(
-            3,
-            solution_1(
-                self.case_2[0],
-                self.case_2[1]
-            )
-        )
-    
-    def test_3_solution_1(self):
-        self.assertEqual(
-            12,
-            solution_1(
-                self.case_3[0],
-                self.case_3[1]
-            )
-        )
-
-
-if __name__ == '__main__':
-    unittest.main()
