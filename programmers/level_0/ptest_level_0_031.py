@@ -1,10 +1,9 @@
 import pytest
 
 from .level_0_031 import (
+    solution,
     solution001,
     solution002,
-    solution003,
-    solution004,
 )
 
 
