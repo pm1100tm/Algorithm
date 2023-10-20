@@ -10,15 +10,18 @@ from .level_0_031 import (
 @pytest.mark.parametrize(
     "n, result", [
         (
-            20, 6
+            0, 0,
         ),
         (
-            100, 9
+            1, 1,
+        ),
+        (
+            10, 1,
         ),
     ]
 )
-def test_level_0_021_solution001(n, result):
-    assert result == solution001(n)
+def test_level_0_031_solution(n, result):
+    assert result == solution(n)
 
 
 @pytest.mark.parametrize(
