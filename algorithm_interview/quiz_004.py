@@ -16,8 +16,8 @@ class CountUtil:
 
     def get_clear_str_list(self, statement: str, ban_list: List[str]) -> List[str]:
         return [
-            word for word in re.sub(r'[^\w]', ' ', statement)
-                .lower().split() if word not in ban_list
+            word for word in re.sub(r'[^\w]', ' ', statement).lower().split()
+            if word not in ban_list
         ]
 
     def solution_one(self, word_list: List[str]) -> str or None:
@@ -72,6 +72,7 @@ Yet experts have voiced concerns that the Korean government is purchasing far to
 Merck said while announcing the clinical trial results that it plans to manufacture enough doses for 10 million people by the end of this year, 1.7 million of which already contracted to be provided to the US government.
 """
 
+
 def test_quiz004_case_001(statements):
     test_count_util: CountUtil = CountUtil()
     result = test_count_util.solution_one(
@@ -80,6 +81,7 @@ def test_quiz004_case_001(statements):
         )
     )
     assert 'the' == result
+
 
 def test_quiz004_case_002(statements):
     test_count_util: CountUtil = CountUtil()
@@ -90,6 +92,7 @@ def test_quiz004_case_002(statements):
     )
     assert 'to' == result
 
+
 def test_quiz004_case_003(statements):
     test_count_util: CountUtil = CountUtil()
     result = test_count_util.solution_one(
@@ -99,6 +102,7 @@ def test_quiz004_case_003(statements):
     )
     assert 'of' == result
 
+
 def test_quiz004_case_004(statements):
     test_count_util: CountUtil = CountUtil()
     result = test_count_util.solution_one(
@@ -107,6 +111,7 @@ def test_quiz004_case_004(statements):
         )
     )
     assert 'covid' == result
+
 
 def test_quiz004_case_005(statements):
     test_count_util: CountUtil = CountUtil()

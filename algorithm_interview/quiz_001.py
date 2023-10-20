@@ -5,7 +5,8 @@
 """
 import collections
 import re
-from typing       import Deque
+from typing import Deque
+
 from utils import CommonUtils
 
 
@@ -54,7 +55,7 @@ class PalindromeCheck:
         s = re.sub('[^a-z0-9]', '', s)
         
         return s == s[::-1]
-        
+
 
 if __name__ == '__main__':
     check = PalindromeCheck()
