@@ -35,33 +35,31 @@ def solution2(chicken: int) -> int:
 
 
 def solution3(chicken: int) -> int:
-    service, rem = divmod(chicken, 10)
-
-    chicken = service + rem
     if chicken < 10:
-        return service
-
-    return solution3(chicken)
+        return 0
+    service_chicken = chicken // 10
+    new_coupons = service_chicken + (chicken % 10)
+    return service_chicken + solution3(new_coupons)
 
 
 if __name__ == '__main__':
-    # assert solution(0) == 0
-    # assert solution(1) == 0
-    # assert solution(9) == 0
-    # assert solution(10) == 1
-    # assert solution(100) == 11
-    # assert solution(1081) == 120
+    assert solution(0) == 0
+    assert solution(1) == 0
+    assert solution(9) == 0
+    assert solution(10) == 1
+    assert solution(100) == 11
+    assert solution(1081) == 120
 
-    # assert solution2(0) == 0
-    # assert solution2(1) == 0
-    # assert solution2(9) == 0
-    # assert solution2(10) == 1
-    # assert solution2(100) == 11
-    # assert solution2(1081) == 120
+    assert solution2(0) == 0
+    assert solution2(1) == 0
+    assert solution2(9) == 0
+    assert solution2(10) == 1
+    assert solution2(100) == 11
+    assert solution2(1081) == 120
 
     assert solution3(0) == 0
     assert solution3(1) == 0
     assert solution3(9) == 0
     assert solution3(10) == 1
     assert solution3(100) == 11
-    # assert solution3(1081) == 120
+    assert solution3(1081) == 120
