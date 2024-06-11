@@ -33,10 +33,10 @@ class CommonUtils:
             result     = original_fn(*args, **kwargs)
             end_time   = time.time()
 
-            print('Working Time[{}]: {} sec'. format(
-                    original_fn.__name__,
-                    end_time - start_time
-                )
+            print(
+                f'Method: {original_fn.__name__}' 
+                f'\nResult: {result}'
+                f'\nTime: {end_time - start_time}'
             )
 
             return result

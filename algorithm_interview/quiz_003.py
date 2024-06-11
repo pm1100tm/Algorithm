@@ -7,7 +7,10 @@
 """
 from typing import List
 
+from utils import CommonUtils
 
+
+@CommonUtils.logging_time
 def order_log_files(log_list: List[str]) -> List[str]:
     letters, digits = [], []
     
@@ -20,9 +23,9 @@ def order_log_files(log_list: List[str]) -> List[str]:
     letters.sort(key=lambda x: (x.split()[1:], x.split()[0]))
     
     return letters + digits
-    
+
 
 if __name__ == "__main__":
     logs = ["dig1 8 1 5 1", "let1 art can", "dig2 3 6", "let2 own kit dig", "let3 art zero"]
     
-    result = order_log_files(logs)
+    order_log_files(logs)
