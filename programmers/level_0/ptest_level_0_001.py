@@ -1,4 +1,4 @@
-from .level_0_001 import solution
+from .level_0_001_나이계산 import solution
 
 import pytest
 

@@ -1,5 +1,4 @@
-"""
-숨어있는 숫자의 덧셈 (2)
+"""숨어있는 숫자의 덧셈(2)
 
 문자열 my_string이 매개변수로 주어집니다.
 my_string은 소문자, 대문자, 자연수로만 구성되어있습니다.
@@ -44,6 +43,8 @@ def solution001(my_string: str):
             if sequential_number_str:
                 num_list.append(int(sequential_number_str))
                 sequential_number_str = ""
+
+        else:
             continue
 
         sequential_number_str += char
@@ -69,18 +70,30 @@ def solution003(my_string: str):
 
 
 if __name__ == '__main__':
+    solution("1111")
+    solution('0000')
+    solution('0001')
+    solution('1000a1')
     solution("aAb1B2cC34oOp")
     solution("1a2b3c4d123Z")
     solution("asfljijokjaflkdd")
     solution("123a123a123a123a")
     solution("AAA1")
 
+    solution001("1111")
+    solution001('0000')
+    solution001('0001')
+    solution001('1000a1')
     solution001("aAb1B2cC34oOp")
     solution001("1a2b3c4d123Z")
     solution001("asfljijokjaflkdd")
     solution001("123a123a123a123a")
     solution001("AAA1")
 
+    solution002("1111")
+    solution002('0000')
+    solution002('0001')
+    solution002('1000a1')
     solution002("aAb1B2cC34oOp")
     solution002("1a2b3c4d123Z")
     solution002("asfljijokjaflkdd")
