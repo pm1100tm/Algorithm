@@ -16,6 +16,9 @@ from utils import prvalue
 
 @prvalue(print_result=True)
 def solution(i, j, k):
+    """
+    count와 같은 처리는 한 번에 하는 것이 효율적이다.
+    """
     n_string = ""
     for n in range(i, j + 1):
         n_string += str(n)
@@ -23,18 +26,8 @@ def solution(i, j, k):
     return n_string.count(str(k))
 
 
-@prvalue(print_result=True)
-def solution001(i, j, k):
-    count = 0
-    for n in range(i, j + 1):
-        count += str(n).count(str(k))
-
-    return count
-
-
 if __name__ == '__main__':
     solution(1, 13, 1)
     solution(10, 50, 5)
     solution(3, 10, 2)
 
-    # count 와 같은 처리는 한 번만 하는 것이 훨씬 속도가 빠름.

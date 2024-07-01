@@ -1,4 +1,5 @@
 """모의고사
+https://school.programmers.co.kr/tryouts/85909/challenges?language=python3
 """
 
 
@@ -36,5 +37,5 @@ def solution(answer: list[int]):
 
 
 if __name__ == '__main__':
-    assert solution([1,3,2,4,2]) == [1]
-    assert solution([1,2,3,4,5]) == [1, 2, 3]
+    assert solution([1,2,3,4,5]) == [1]
+    assert solution([1,3,2,4,2]) == [1, 2, 3]
