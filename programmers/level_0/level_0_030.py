@@ -30,5 +30,3 @@ if __name__ == '__main__':
 
     assert solution001("bus") == "bs"
     assert solution001("nice to meet you") == "nc t mt y"
-
-    # 왠만하면 리스트 컴프리헨션이 가장 빠르다

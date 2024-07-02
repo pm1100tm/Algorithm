@@ -46,3 +46,5 @@ if __name__ == '__main__':
     assert solution("ybcde", "az", 1) == "bcdef"
     assert solution("zzzzzz", "abcdefghijklmnopqrstuvwxy", 6) == "zzzzzz"
     assert solution("bcdefghijklmnopqrstuvwxyz", "a", 1) == "cdefghijklmnopqrstuvwxyzb"
+
+    assert solution2('aukks', 'wbqd', 5) == 'happy'
