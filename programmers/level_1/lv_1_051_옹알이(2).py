@@ -1,12 +1,6 @@
 """옹알이(2)
 https://school.programmers.co.kr/learn/courses/30/lessons/133499
-
-입출력 예
-["aya", "yee", "u", "maa"] == 1
-["ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"] == 2
-
-알고리즘:
-자료구조: string manipulation
+Idea: string manipulation
 """
 import re
 

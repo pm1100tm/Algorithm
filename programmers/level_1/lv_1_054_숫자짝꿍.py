@@ -18,7 +18,10 @@ def solution(x: str, y: str) -> str:
                 start_index_map[char] = ret + 1
                 answer.append(char)
 
-    operation(x, y) if len(x) < len(y) else operation(y, x)
+    if len(x) < len(y):
+        operation(x, y)
+    else:
+        operation(y, x)
 
     if not answer:
         return '-1'
