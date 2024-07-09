@@ -28,7 +28,6 @@ def decimal_to_binary(n: int) -> str:
     binary_str = ""
     while n > 0:
         binary_str = str(n % 2) + binary_str
-        print(binary_str)
         n = n // 2
 
     return binary_str
