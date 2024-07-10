@@ -55,13 +55,13 @@ def is_consecutive_numbers_3(numbers: list[int], n: int) -> bool:
     정수 num에 대해서 n 개의 연속되는 정수 배열을 만든 뒤, 각각의 원소가 배열에 존재하는지 판단한다.
     Hash Set
     """
-    sorted_number = sorted(set(numbers))
+    sorted_numbers = sorted(set(numbers))
 
-    if len(sorted_number) < n:
+    if len(sorted_numbers) < n:
         return False
 
     for num in numbers:
-        if all([num + i in sorted_number for i in range(n)]):
+        if all([num + i in sorted_numbers for i in range(n)]):
             return True
 
     return False

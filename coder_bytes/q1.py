@@ -1,9 +1,10 @@
 """QueneCheck
 https://github.com/gutty333/Hard-Programming-Challenges/blob/master/22_QueenCheck.cpp
-ING
 """
+from utils import prvalue
 
 
+@prvalue(print_result=True)
 def solution(str_arr: list[str]):
     move = [
         (0, -1),  # up
@@ -20,28 +21,35 @@ def solution(str_arr: list[str]):
     qy = int(str_arr[0][3])
     kx = int(str_arr[1][1])
     ky = int(str_arr[1][3])
+
     q_range = []
     k_range = []
-
     for (x, y) in move:
+        # make king range
+        move_kx, move_ky = kx + x, ky + y
+        if 1 <= move_kx <= 8 and 1 <= move_ky <= 8:
+            k_range.append([move_kx, move_ky])
+
+        # make queen range
         move_qx, move_qy = qx, qy
         while True:
             move_qx += x
             move_qy += y
             if 1 <= move_qx <= 8 and 1 <= move_qy <= 8:
                 q_range.append([move_qx, move_qy])
-                continue
-            break
+            else:
+                break
 
-    for (x, y) in move:
-        move_kx, move_ky = kx + x, ky + y
-        if 1 <= move_kx <= 8 and 1 <= move_ky <= 8:
-            k_range.append([move_kx, move_ky])
+    # If the original king position not be in q range, return -1
+    if [kx, ky] not in q_range:
+        return -1
 
     count = 0
     for k in k_range:
         if k not in q_range:
             count += 1
+
+    return count
 
 
 if __name__ == '__main__':
@@ -51,4 +59,4 @@ if __name__ == '__main__':
     solution(['(1,8)', '(2,7)']) # 3
     solution(['(1,1)', '(8,1)']) # 2
     solution(['(8,2)', '(7,1)']) # 2
-    # solution(['(3,1)', '(4,4)']) # -1 >> why it should return -1
+    solution(['(3,1)', '(4,4)']) # -1
