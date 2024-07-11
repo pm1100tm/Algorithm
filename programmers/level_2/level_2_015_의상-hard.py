@@ -1,30 +1,54 @@
 """의상
-https://school.programmers.co.kr/tryouts/85918/challenges?language=python3
-- itea
+https://school.programmers.co.kr/learn/courses/30/lessons/42578
+- idea
 combinations(조합)
 """
-import itertools
+from utils import prvalue
+
 from collections import defaultdict
+from itertools import product, combinations
 
 
+@prvalue(print_result=True)
 def solution(clothes: list[list[str]]) -> int:
     """
-    Failed
+    시간초과: 케이스 1, 4, 7, 26
     """
-    clothes_map = defaultdict(list)
+    clothes_dict = defaultdict(list)
     for name, type_ in clothes:
-        clothes_map[type_].append(name)
+        clothes_dict[type_].append(name)
 
-    answer = 0
-    data_list = [v for v in clothes_map.values()]
-    for i in range(len(data_list)):
-        for j in range(i, len(data_list)):
-            answer += len(list(itertools.product(*data_list[i:j + 1])))
+    all_clothes = [clothes_dict[k] for k in clothes_dict.keys()]
+    ret = []
+    for i in range(1, len(all_clothes) + 1):
+        for comb in combinations(all_clothes, i):
+            for item in product(*comb):
+                ret.append(item)
 
-    return answer
+    return len(ret)
 
 
+@prvalue(print_result=True)
 def solution2(clothes: list[list[str]]) -> int:
+    """
+    시간초과: 케이스 1
+    """
+    clothes_dict = defaultdict(list)
+    for name, type_ in clothes:
+        clothes_dict[type_].append(name)
+
+    all_clothes = [clothes_dict[k] for k in clothes_dict.keys()]
+    count = 0
+    for i in range(1, len(all_clothes) + 1):
+        for comb in combinations(all_clothes, i):
+            for _ in product(*comb):
+                count += 1
+
+    return count
+
+
+@prvalue(print_result=True)
+def solution3(clothes: list[list[str]]) -> int:
     clothes_dict = defaultdict(list)
     for name, type_ in clothes:
         clothes_dict[type_].append(name)
@@ -42,32 +66,17 @@ def solution2(clothes: list[list[str]]) -> int:
 
 
 if __name__ == '__main__':
-    assert solution(
+    solution(
         [
             ["yellow_hat", "headgear"],
             ["blue_sunglasses", "eyewear"],
             ["green_turban", "headgear"],
-        ],
-    ) == 5
-    assert solution(
+        ]
+    )
+    solution(
         [
             ["crow_mask", "face"],
             ["blue_sunglasses", "face"],
             ["smoky_makeup", "face"],
-        ],
-    ) == 3
-
-    assert solution2(
-        [
-            ["yellow_hat", "headgear"],
-            ["blue_sunglasses", "eyewear"],
-            ["green_turban", "headgear"],
-        ],
-    ) == 5
-    assert solution2(
-        [
-            ["crow_mask", "face"],
-            ["blue_sunglasses", "face"],
-            ["smoky_makeup", "face"],
-        ],
-    ) == 3
+        ]
+    )

@@ -1,7 +1,6 @@
 """구명보트
 https://school.programmers.co.kr/learn/courses/30/lessons/42885
-- idea
-Greedy(탐욕법)
+- idea: Greedy(탐욕법)
 """
 from utils import prvalue
 from collections import deque
