@@ -24,6 +24,17 @@ def solution(n: int, a: int, b: int) -> int:
     return r
 
 
+@prvalue(print_result=True)
+def solution2(n: int, a: int, b: int) -> int:
+    answer = 0
+    n1, n2 = a, b
+    while n1 != n2:
+        answer += 1
+        n1, n2 = (n1 + 1) // 2, (n2 + 1) // 2
+
+    return answer
+
+
 if __name__ == '__main__':
     assert solution(8, 4, 7) == 3
     assert solution(2, 1, 2) == 1
@@ -31,3 +42,10 @@ if __name__ == '__main__':
     assert solution(1048576, 12345, 12346) == 1
     assert solution(8, 5, 8) == 2
     assert solution(4, 2, 3) == 2
+
+    assert solution2(8, 4, 7) == 3
+    assert solution2(2, 1, 2) == 1
+    assert solution2(8, 1, 3) == 2
+    assert solution2(1048576, 12345, 12346) == 1
+    assert solution2(8, 5, 8) == 2
+    assert solution2(4, 2, 3) == 2
