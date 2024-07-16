@@ -1,8 +1,9 @@
 """기능 개발
 https://school.programmers.co.kr/learn/courses/30/lessons/42586
 """
-from collections import deque
 from utils import prvalue
+
+from collections import deque
 
 
 @prvalue(print_result=False)
