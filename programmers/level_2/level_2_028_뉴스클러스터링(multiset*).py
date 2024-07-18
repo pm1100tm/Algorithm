@@ -10,7 +10,7 @@ from collections import Counter
 def check_only_eng_characters(str_: str) -> bool:
     """영어 소문자, 대문자만 들어있는지 체크하는 정규식
     """
-    pattern = r'^[a-zA-z]+$'
+    pattern = r'^[a-zA-Z]+$'
     return bool(re.search(pattern, str_))
 
 
@@ -23,9 +23,6 @@ def slice_two_char_using_regex_and_lower(s: str) -> list[str]:
 
 @prvalue(print_result=True)
 def solution(str1: str, str2: str) -> int:
-    """
-    failed for case 8
-    """
     a_list = slice_two_char_using_regex_and_lower(str1)
     b_list = slice_two_char_using_regex_and_lower(str2)
 
